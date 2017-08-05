@@ -8,7 +8,6 @@ public class OnExitBondaries : MonoBehaviour {
     {
         if (other.tag == "Bullet")
         {
-            //print("Sali de pantalla");
             other.GetComponent<Bullet>().dispose();
         }
     }
