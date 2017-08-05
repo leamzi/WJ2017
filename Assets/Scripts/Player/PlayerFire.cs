@@ -9,7 +9,7 @@ public class PlayerFire : MonoBehaviour {
 
     [SerializeField] private float fireRate;
 
-    public FastPool bulletPool;
+    [HideInInspector] public FastPool bulletPool;
     private List<GameObject> bullets;
     private float nextFire;
 
