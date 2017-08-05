@@ -13,21 +13,21 @@ public class Boundary
 }
 
 /// <summary>
-/// Define player actions in the game
+/// Manage Player movement
 /// </summary>
-public class PlayerController : MonoBehaviour {
+public class PlayerMovement : MonoBehaviour {
 
     [Header("Player Settings")]
 
-    [SerializeField] private float playerSpeed = 15f;
-    [SerializeField] private float shipTilt = 0f;
-
-    private float moveHorizontal = 0f;
-    private float moveVertical = 0f;
-
-    public Boundary boundary;
-
-    private Rigidbody playerRigidBody;
+    [SerializeField] private float      playerSpeed = 15f;
+    [SerializeField] private float      shipTilt = 0f;
+    private float       moveHorizontal = 0f;
+    private float       moveVertical = 0f;
+    private Rigidbody   playerRigidBody;
+    
+    [Header("Game Settings")]
+    public Boundary         boundary;
+    
 
     #region Monobehaviour Methods
     private void Start()
@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour {
 
         Move();
     }
+
     #endregion
 
     #region PlayerMovement
@@ -83,4 +84,5 @@ public class PlayerController : MonoBehaviour {
     }
     #endregion
 
+    
 }

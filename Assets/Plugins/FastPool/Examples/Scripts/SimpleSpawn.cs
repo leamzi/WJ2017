@@ -14,7 +14,7 @@ public class SimpleSpawn : MonoBehaviour
 
     void Start()
     {
-        hugeObjectsArray = new GameObject[1000];
+        hugeObjectsArray = new GameObject[10];
     }
 
 
@@ -22,7 +22,7 @@ public class SimpleSpawn : MonoBehaviour
     public void Spawn()
     {
         //lets spawn 1000 objects
-        for (int i = 0; i < 1000; i++)
+        for (int i = 0; i < 10; i++)
         {
             //First of all we need to get the pool for our source game object.
             //If it's not exists - it will be created automatically with default settings.
@@ -43,7 +43,7 @@ public class SimpleSpawn : MonoBehaviour
     public void DestroyObjects()
     {
         //lets despawn our 1000 objects
-        for (int i = 0; i < 1000; i++)
+        for (int i = 0; i < 10; i++)
         {
             //Get the pool for our source game object.
             //If it's not exists - it will be created automatically with default settings.
