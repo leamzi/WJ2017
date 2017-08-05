@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour {
     [Header("Player Settings")]
 
     [SerializeField] private float playerSpeed = 15f;
+    [SerializeField] private float shipTilt = 0f;
+
     private float moveHorizontal = 0f;
     private float moveVertical = 0f;
 
@@ -53,6 +55,7 @@ public class PlayerController : MonoBehaviour {
         playerRigidBody.velocity = movement * playerSpeed;
 
         checkWorldBoundaries();
+        playerShipTilt();
     }
 
     /// <summary>
@@ -65,7 +68,18 @@ public class PlayerController : MonoBehaviour {
             0f,
             Mathf.Clamp(playerRigidBody.position.z, boundary.zMin, boundary.zMax)
             );
+    }
 
+    /// <summary>
+    /// Tilt the player ship when is moving left or right
+    /// </summary>
+    private void playerShipTilt()
+    {
+        playerRigidBody.rotation = Quaternion.Euler(
+            0f,
+            0f,
+            (playerRigidBody.velocity.x * -shipTilt)
+            );
     }
     #endregion
 

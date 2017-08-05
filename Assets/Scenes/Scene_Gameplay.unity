@@ -147,36 +147,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 54123689377094086, guid: 80505e942523a7248a46b5eb81f2c0de,
-        type: 2}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114696064933001772, guid: 80505e942523a7248a46b5eb81f2c0de,
-        type: 2}
-      propertyPath: playerSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114696064933001772, guid: 80505e942523a7248a46b5eb81f2c0de,
-        type: 2}
-      propertyPath: boundary.xMin
-      value: -7.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114696064933001772, guid: 80505e942523a7248a46b5eb81f2c0de,
-        type: 2}
-      propertyPath: boundary.xMax
-      value: 7.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114696064933001772, guid: 80505e942523a7248a46b5eb81f2c0de,
-        type: 2}
-      propertyPath: boundary.zMin
-      value: -2.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114696064933001772, guid: 80505e942523a7248a46b5eb81f2c0de,
-        type: 2}
-      propertyPath: boundary.zMax
-      value: 22
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80505e942523a7248a46b5eb81f2c0de, type: 2}
   m_IsPrefabParent: 0
