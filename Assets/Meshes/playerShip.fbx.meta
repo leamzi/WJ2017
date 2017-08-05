@@ -14,6 +14,13 @@ ModelImporter:
     100012: Wing_Center01
     100014: Wing_Center03
     100016: Wing_Center04
+    100018: Fork_mesh02
+    100020: Knife_mesh01
+    100022: Knife_mesh01 1
+    100024: Thruster_R_01
+    100026: Wing_L_01
+    100028: Wing_R_01
+    100030: Wing_R_02
     400000: //RootNode
     400002: Cockpit01
     400004: Ship_mesh01
@@ -23,6 +30,13 @@ ModelImporter:
     400012: Wing_Center01
     400014: Wing_Center03
     400016: Wing_Center04
+    400018: Fork_mesh02
+    400020: Knife_mesh01
+    400022: Knife_mesh01 1
+    400024: Thruster_R_01
+    400026: Wing_L_01
+    400028: Wing_R_01
+    400030: Wing_R_02
     2300000: Cockpit01
     2300002: Ship_mesh01
     2300004: Thruster_Center01
@@ -31,6 +45,13 @@ ModelImporter:
     2300010: Wing_Center01
     2300012: Wing_Center03
     2300014: Wing_Center04
+    2300016: Fork_mesh02
+    2300018: Knife_mesh01
+    2300020: Knife_mesh01 1
+    2300022: Thruster_R_01
+    2300024: Wing_L_01
+    2300026: Wing_R_01
+    2300028: Wing_R_02
     3300000: Cockpit01
     3300002: Ship_mesh01
     3300004: Thruster_Center01
@@ -39,6 +60,13 @@ ModelImporter:
     3300010: Wing_Center01
     3300012: Wing_Center03
     3300014: Wing_Center04
+    3300016: Fork_mesh02
+    3300018: Knife_mesh01
+    3300020: Knife_mesh01 1
+    3300022: Thruster_R_01
+    3300024: Wing_L_01
+    3300026: Wing_R_01
+    3300028: Wing_R_02
     4300000: Ship_mesh01
     4300002: Cockpit01
     4300004: Thruster_Center01
@@ -47,6 +75,13 @@ ModelImporter:
     4300010: Thruster_L_01
     4300012: Wing_Center04
     4300014: Thruster_L_01
+    4300016: Fork_mesh02
+    4300018: Wing_L_01
+    4300020: Knife_mesh01
+    4300022: Wing_R_01
+    4300024: Thruster_R_01
+    4300026: Knife_mesh01
+    4300028: Wing_R_02
   materials:
     importMaterials: 1
     materialName: 0
