@@ -2054,6 +2054,7 @@ MonoBehaviour:
   respawnMP: {fileID: 0}
   playerShip: {fileID: 1486513849732596}
   playerDeathAnim: {fileID: 1847386437452398}
+  invulnerable: 0
 --- !u!114 &114208305406708364
 MonoBehaviour:
   m_ObjectHideFlags: 1

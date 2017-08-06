@@ -11,9 +11,6 @@ public class Enemy : MonoBehaviour {
     public GameObject enemyModel;
     public GameObject explosionVFX;
 
-    public GameObject life01;
-    public GameObject life02;
-
     //int health = 5;
 
     public Transform bulletEnemyObj;
@@ -45,8 +42,11 @@ public class Enemy : MonoBehaviour {
 		case 0:	transform.Translate (Vector3.down * Time.deltaTime * moveSpeed);
 				break;
 
-		case 1: transform.Translate (Vector3.down * Time.deltaTime * moveSpeed);
-				break;
+		case 1:
+                //transform.Translate (Vector3.down * Time.deltaTime * moveSpeed);
+                Vector3 myVector = new Vector3(0, 0, -1 * Time.deltaTime * moveSpeed);
+                transform.Translate(myVector);
+                break;
 		
 		//si aun no bajo, seguir bajando al boss,
 		case 2:
