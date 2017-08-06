@@ -33,7 +33,7 @@ public class GameGlobalVariables : SingletonMonoBehaviour<GameGlobalVariables> {
     #endregion
 
     #region Game Vars
-    public PlayerBulletType currentBulletType = PlayerBulletType.BULLET_FORK;
+    public PlayerBulletType currentBulletType = PlayerBulletType.BULLET_CUTTER;
     public enum PlayerBulletType
     {
         BULLET_FORK,
