@@ -350,16 +350,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114350420597345256, guid: d549bd94add25a54484862ee6e5017a3,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 85340418}
     - target: {fileID: 223103770742893020, guid: d549bd94add25a54484862ee6e5017a3,
         type: 2}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1620184600}
+    - target: {fileID: 114350420597345256, guid: d549bd94add25a54484862ee6e5017a3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 85340418}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d549bd94add25a54484862ee6e5017a3, type: 2}
   m_IsPrefabParent: 0
@@ -406,11 +406,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4299857461389086, guid: 80505e942523a7248a46b5eb81f2c0de, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.024017
+      value: -0.18
       objectReference: {fileID: 0}
     - target: {fileID: 4299857461389086, guid: 80505e942523a7248a46b5eb81f2c0de, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.4575
+      value: 1.31
       objectReference: {fileID: 0}
     - target: {fileID: 4299857461389086, guid: 80505e942523a7248a46b5eb81f2c0de, type: 2}
       propertyPath: m_LocalPosition.z
