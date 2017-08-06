@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
+/// <summary>
+/// Autor: Leamzi
+/// Class that manage global variables in the game
+/// </summary>
 public class GameGlobalVariables : SingletonMonoBehaviour<GameGlobalVariables> {
 
     #region Sound Vars
@@ -12,11 +16,14 @@ public class GameGlobalVariables : SingletonMonoBehaviour<GameGlobalVariables> {
     #endregion
 
     #region SFXs
-    public static string SFX_PLAYER_BLAST_01 = "SFX_Player_Blast";
+    public static string SFX_PLAYER_BLAST_FORK = "SFX_Player_Blast";
+    public static string SFX_PLAYER_BLAST_KNIFE = "SFX_Player_Blast_Knife";
+    public static string SFX_PLAYER_BLAST_CUTTER = "SFX_Player_Blast";
     public static string SFX_PLAYER_DEATH = "SFX_Player_Explosion";
+    public static string SFX_PLAYER_EXTRA_LIFE_POWERUP = "SFX_Player_Extra_Life";
     public static string SFX_ENEMY_BLAST_01 = "SFX_Enemy_Blast";
     public static string SFX_ENEMY_DEATH = "SFX_Enemy_Explosion";
-
+    public static string SFX_GAMEPLAY_POWERUP = "SFX_Gameplay_Powerup";
     #endregion
 
     #endregion
@@ -33,7 +40,7 @@ public class GameGlobalVariables : SingletonMonoBehaviour<GameGlobalVariables> {
     #endregion
 
     #region Game Vars
-    public PlayerBulletType currentBulletType = PlayerBulletType.BULLET_CUTTER;
+    public PlayerBulletType currentBulletType = PlayerBulletType.BULLET_FORK;
     public enum PlayerBulletType
     {
         BULLET_FORK,

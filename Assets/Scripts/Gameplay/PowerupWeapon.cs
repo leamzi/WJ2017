@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Autor: Leamzi
+/// Class that manage powerup type weapon
+/// </summary>
 public class PowerupWeapon : PowerupManager {
 
 

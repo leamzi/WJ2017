@@ -16,7 +16,6 @@ public class PowerupManager : MonoBehaviour {
         if(other.tag == "Player")
         {
             activatePowerup();
-            //dispose();
         }
     }
 
@@ -27,6 +26,7 @@ public class PowerupManager : MonoBehaviour {
 
     private void activatePowerup()
     {
+        SoundManager.instance.PlaySfx(GameGlobalVariables.SFX_GAMEPLAY_POWERUP);
         switch (powerupType)
         {
             case GameGlobalVariables.PowerupType.POWERUP_WEAPON:

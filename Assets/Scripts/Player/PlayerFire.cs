@@ -86,12 +86,14 @@ public class PlayerFire : MonoBehaviour {
             case GameGlobalVariables.PlayerBulletType.BULLET_FORK:
                 muzzle_fork.SetActive(true);
                 bullets.Add(bulletPool.FastInstantiate(PlayerManager.Instance.bulletForkMP));
+                SoundManager.instance.PlaySfx(GameGlobalVariables.SFX_PLAYER_BLAST_FORK);
                 break;
             case GameGlobalVariables.PlayerBulletType.BULLET_KNIFE:
                 muzzle_knife01.SetActive(true);
                 muzzle_knife02.SetActive(true);
                 bullets.Add(bulletPool.FastInstantiate(PlayerManager.Instance.bulletKnifeMP01));
                 bullets.Add(bulletPool.FastInstantiate(PlayerManager.Instance.bulletKnifeMP02));
+                SoundManager.instance.PlaySfx(GameGlobalVariables.SFX_PLAYER_BLAST_KNIFE);
                 break;
             case GameGlobalVariables.PlayerBulletType.BULLET_CUTTER:
                 muzzle_cutter01.SetActive(true);
@@ -105,7 +107,7 @@ public class PlayerFire : MonoBehaviour {
                 break;
         }
         //print("play sfx");
-        SoundManager.instance.PlaySfx(GameGlobalVariables.SFX_PLAYER_BLAST_01);
+        
     }
 
     public void OnPowerup()
@@ -114,18 +116,18 @@ public class PlayerFire : MonoBehaviour {
             return;
 
         playerFrLvl++;
-        print("Player gun level: " + playerFrLvl);
+        //print("Player gun level: " + playerFrLvl);
 
         if (playerFrLvl > 2)
         {
-            print("Changing arm");
+            //print("Changing arm");
             changeBulletTypes(GameGlobalVariables.PlayerBulletType.BULLET_KNIFE);
             fireRate = 0.75f;
             playerFrLvl = 0;
         }
         else
         {
-            print("Upgrading fire rate");
+            //print("Upgrading fire rate");
             fireRate = fireRate - 0.20f;
         }
     }
@@ -135,12 +137,14 @@ public class PlayerFire : MonoBehaviour {
         switch (GameGlobalVariables.Instance.currentBulletType)
         {
             case GameGlobalVariables.PlayerBulletType.BULLET_FORK:
-            GameGlobalVariables.Instance.currentBulletType = GameGlobalVariables.PlayerBulletType.BULLET_KNIFE;
-            fireRate = 0.75f;
+                GameGlobalVariables.Instance.currentBulletType = GameGlobalVariables.PlayerBulletType.BULLET_KNIFE;
+                fireRate = 0.75f;
+                PlayerManager.Instance.onChangeTexture(Color.yellow);
                 break;
             case GameGlobalVariables.PlayerBulletType.BULLET_KNIFE:
-            GameGlobalVariables.Instance.currentBulletType = GameGlobalVariables.PlayerBulletType.BULLET_CUTTER;
-            fireRate = 0.4f;
+                GameGlobalVariables.Instance.currentBulletType = GameGlobalVariables.PlayerBulletType.BULLET_CUTTER;
+                fireRate = 0.4f;
+                PlayerManager.Instance.onChangeTexture(Color.green);
                 break;
             case GameGlobalVariables.PlayerBulletType.BULLET_CUTTER:
                 break;

@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Autor: Leamzi
+/// Class that manage the gameplay events
+/// </summary>
 public class GameController : SingletonMonoBehaviour<GameController>
 {
     public GameObject powerupSpawnPoint;
     public GameObject powerupWeapon;
     private FastPool powerupWeaponPool;
-    public float puStartWait = 10.0f;
-    public float puSpawnWait = 20.0f;
+    //public float puStartWait = 10.0f;
+    public float puStartWait = 1f;
+    //public float puSpawnWait = 20.0f;
+    public float puSpawnWait = 3f;
 
 	// Use this for initialization
 	protected override void Start () {
@@ -36,7 +42,7 @@ public class GameController : SingletonMonoBehaviour<GameController>
             powerupSpawnPoint.transform.position = spawnPosition;
 
             powerupWeaponPool.FastInstantiate(powerupSpawnPoint.transform);
-            print("instantiate powerup");
+            //print("instantiate powerup");
             yield return new WaitForSeconds(puSpawnWait);
         }
     }

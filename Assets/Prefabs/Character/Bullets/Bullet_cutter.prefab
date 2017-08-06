@@ -285,6 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  damage: 6
 --- !u!198 &198333745735624254
 ParticleSystem:
   m_ObjectHideFlags: 1
