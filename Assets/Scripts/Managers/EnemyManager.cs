@@ -20,6 +20,8 @@ public class EnemyManager : SingletonMonoBehaviour<EnemyManager>  {
 	public float startWait;
 	public bool bossSpawned;
 
+	//public float dificultad=1.0f;
+
 	//public List<enemyShip> enemyList = new List<enemyShip>();
 
 	// Use this for initialization
@@ -47,17 +49,22 @@ public class EnemyManager : SingletonMonoBehaviour<EnemyManager>  {
 	{
 		yield return new WaitForSeconds (startWait);
 
-		if (!bossSpawned) {
-			
+		while (true) {
+
+			//set dificultad
+			//spawnWaveWait=spawnWaveWait/dificultad;
+			//spawnWait/=dificultad;
+
+
 			for (currentWave = 1; currentWave <= numWaves; currentWave++) {
 				for (int i = 0; i < enemiesPerWave; i++) {
 					int tipoEnemigo;				
 		
 					tipoEnemigo = currentWave-1;
 
-					if (currentWave == 3) {
-						bossSpawned = true;
-					}
+					//if (currentWave == 3) {
+					//	bossSpawned = true;
+					//}
 
 					// x -8 a 8
 					SpawnEnemy (tipoEnemigo, new Vector3 (Random.Range (-8, 8), 0, 26)); 
@@ -68,7 +75,12 @@ public class EnemyManager : SingletonMonoBehaviour<EnemyManager>  {
 
 				yield return new WaitForSeconds (spawnWaveWait);
 			}
+
+			//mas dificultad
+			//dificultad+=0.5;
 		}
+	
+
 	}
 		
 
