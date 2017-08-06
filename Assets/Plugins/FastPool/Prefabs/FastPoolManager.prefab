@@ -51,6 +51,26 @@ MonoBehaviour:
     useCustomID: 1
     customID: 1
     cached_internal: 0
+  - sourcePrefab: {fileID: 1164004748202758, guid: 43c621de12c47b94ea2097ef85a7e955,
+      type: 2}
+    Capacity: 50
+    PreloadCount: 10
+    NotificationType: 0
+    WarmOnLoad: 1
+    ParentOnCache: 0
+    useCustomID: 1
+    customID: 100
+    cached_internal: 0
+  - sourcePrefab: {fileID: 1151274342250288, guid: c86c47af1d5898c4ab610d63d3a9c48d,
+      type: 2}
+    Capacity: 50
+    PreloadCount: 10
+    NotificationType: 0
+    WarmOnLoad: 1
+    ParentOnCache: 0
+    useCustomID: 1
+    customID: 101
+    cached_internal: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
