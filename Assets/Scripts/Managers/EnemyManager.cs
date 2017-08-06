@@ -8,9 +8,9 @@ using UnityEngine;
 public class EnemyManager : SingletonMonoBehaviour<EnemyManager>  {
 
 
-	public Transform fireMp;
+	//public Transform enemyShipObj; // prefab nave enemigo
 
-	public Transform enemyShipObj; // prefab nave enemigo
+	public Transform[] enemyTypes = new Transform[2];
 
 	public int enemiesPerWave;
 	public int numWaves;
@@ -51,7 +51,7 @@ public class EnemyManager : SingletonMonoBehaviour<EnemyManager>  {
 			for (int i = 0; i < enemiesPerWave; i++)
 			{
 				// x -8 a 8
-				SpawnEnemy ( new Vector3 ( Random.Range(-8,8),0,26) ); 
+				SpawnEnemy ( 0, new Vector3 ( Random.Range(-8,8),0,26) ); 
 				//enemyList.Add ();
 
 				yield return new WaitForSeconds (spawnWait);
@@ -62,10 +62,10 @@ public class EnemyManager : SingletonMonoBehaviour<EnemyManager>  {
 	}
 		
 
-	void SpawnEnemy(Vector3 myPos)	
+	void SpawnEnemy(int myType, Vector3 myPos)	
 	{
 
-		Instantiate (enemyShipObj, myPos, enemyShipObj.rotation);
+		Instantiate (enemyTypes[myType], myPos, enemyTypes[myType].rotation);
 
 	}
 

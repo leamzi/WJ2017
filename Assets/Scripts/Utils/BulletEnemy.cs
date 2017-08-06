@@ -4,8 +4,8 @@
 
 public class BulletEnemy : MonoBehaviour {
 
-    float speed = 20.0f;
-	//int damage = 5;
+    public float speed = 20.0f;
+	int damage = 5;
 
     private void Start()
     {
