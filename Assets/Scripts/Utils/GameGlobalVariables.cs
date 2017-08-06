@@ -13,12 +13,14 @@ public class GameGlobalVariables : SingletonMonoBehaviour<GameGlobalVariables> {
 
     #region BGMs
     public static string BGM_GAMEPLAY = "BGM_Gameplay";
+    public static string BGM_MAINMENU = "BGM_MainMenu";
+
     #endregion
 
     #region SFXs
     public static string SFX_PLAYER_BLAST_FORK = "SFX_Player_Blast";
     public static string SFX_PLAYER_BLAST_KNIFE = "SFX_Player_Blast_Knife";
-    public static string SFX_PLAYER_BLAST_CUTTER = "SFX_Player_Blast";
+    public static string SFX_PLAYER_BLAST_CUTTER = "SFX_Player_Blast_Cutter";
     public static string SFX_PLAYER_DEATH = "SFX_Player_Explosion";
     public static string SFX_PLAYER_EXTRA_LIFE_POWERUP = "SFX_Player_Extra_Life";
     public static string SFX_ENEMY_BLAST_01 = "SFX_Enemy_Blast";

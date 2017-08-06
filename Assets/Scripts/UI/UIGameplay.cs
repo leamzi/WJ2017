@@ -8,20 +8,21 @@ using UnityEngine.UI;
 public class UIGameplay : MonoBehaviour {
 
     public Text textScore;
+    public GameObject GameoverPanel;
 
 	// Use this for initialization
 	void Start () {
-
         PlayerManager.Instance.notifyPlayerScoreObservers += addScore;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     private void addScore(int newScore)
     {
         textScore.text = "" + newScore;
+    }
+
+    public void OnGameOver()
+    {
+        GameoverPanel.SetActive(true);
+        Time.timeScale = 0f;
     }
 }

@@ -102,6 +102,7 @@ public class PlayerFire : MonoBehaviour {
                 bullets.Add(bulletPool.FastInstantiate(PlayerManager.Instance.bulletCutterMP01));
                 bullets.Add(bulletPool.FastInstantiate(PlayerManager.Instance.bulletCutterMP02));
                 bullets.Add(bulletPool.FastInstantiate(PlayerManager.Instance.bulletCutterMP03));
+                SoundManager.instance.PlaySfx(GameGlobalVariables.SFX_PLAYER_BLAST_CUTTER);
                 break;
             case GameGlobalVariables.PlayerBulletType.BULLET_MIXER:
                 break;

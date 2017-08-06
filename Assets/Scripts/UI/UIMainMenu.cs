@@ -9,7 +9,7 @@ public class UIMainMenu : MonoBehaviour {
 
     private void Start()
     {
-        //SoundManager.instance.PlayBgm(GameGlobalVariables.BGM_GAMEPLAY);
+        SoundManager.instance.PlayBgm(GameGlobalVariables.BGM_MAINMENU);
     }
 
     /// <summary>
@@ -17,6 +17,6 @@ public class UIMainMenu : MonoBehaviour {
     /// </summary>
     public void OnPlay()
     {
-        SceneManager.LoadScene("Scene_Gameplay");
+        SceneManager.LoadScene("Scene_Intro");
     }
 }
