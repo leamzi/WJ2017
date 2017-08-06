@@ -7,8 +7,6 @@ using UnityEngine;
 /// Class that manage powerup type weapon
 /// </summary>
 public class PowerupWeapon : PowerupManager {
-
-
     // Use this for initialization
     void Start () {
         powerupType = GameGlobalVariables.PowerupType.POWERUP_WEAPON;

@@ -10,6 +10,7 @@ public class PlayerManager : SingletonMonoBehaviour<PlayerManager> {
 
     public static PlayerMovement controllerMovement;
     public static PlayerFire controllerFire;
+    public static PlayerHealth healthManager;
 
     public Transform bulletForkMP;
     public Transform bulletKnifeMP01;
