@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour {
 
+    public int live = 2;
 	// Use this for initialization
 	void Start () {
 		

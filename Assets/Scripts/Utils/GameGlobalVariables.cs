@@ -13,6 +13,8 @@ public class GameGlobalVariables : SingletonMonoBehaviour<GameGlobalVariables> {
 
     #region BGMs
     public static string BGM_GAMEPLAY = "BGM_Gameplay";
+    public static string BGM_MAINMENU = "BGM_MainMenu";
+
     #endregion
 
     #region SFXs

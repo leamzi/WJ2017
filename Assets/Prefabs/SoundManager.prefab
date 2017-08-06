@@ -136,7 +136,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.501
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -299,6 +299,7 @@ MonoBehaviour:
   randomPitchSource: {fileID: 82901065508822368}
   bgmAudios:
   - {fileID: 8300000, guid: 5df63857b6840684aa7772a7d690e82a, type: 3}
+  - {fileID: 8300000, guid: 5d4dbca1beb247146be8f897888f192f, type: 3}
   sfxAudios:
   - {fileID: 8300000, guid: 3bfd5cd5395feaf44863a2b4316e157e, type: 3}
   - {fileID: 8300000, guid: 6e8b1d40bdf6e6d468f70dda52e3b535, type: 3}
