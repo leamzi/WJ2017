@@ -542,12 +542,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c777aa2e993e54643b87cf4af4f3c6fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
+  moveSpeed: 9
   enemyType: 1
   canFire: 1
   enemyModel: {fileID: 1498308065160402}
   explosionVFX: {fileID: 1614849217624782}
-  bulletEnemyObj: {fileID: 0}
+  bulletEnemyObj: {fileID: 4185484960008228, guid: a8e53d402252577429931937e79bb952,
+    type: 2}
   fireRate: 1
 --- !u!136 &136044485379554334
 CapsuleCollider:

@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour {
     public GameObject enemyModel;
     public GameObject explosionVFX;
 
+    //private FastPool poolBananaBullet;
     //int health = 5;
 
     public Transform bulletEnemyObj;
@@ -50,21 +51,18 @@ public class Enemy : MonoBehaviour {
 		
 		//si aun no bajo, seguir bajando al boss,
 		case 2:
-			if (transform.position.z > 27) {
-				transform.Translate (Vector3.down * Time.deltaTime * moveSpeed);
-			}
+			//if (transform.position.z > 27) {
+			//	transform.Translate (Vector3.down * Time.deltaTime * moveSpeed);
+			//}
 	
 
-			//si baja a pos.Z 27 o menos, mover de costado
-			if (transform.position.z <= 27) {
-				transform.Translate (Vector3.left * Time.deltaTime * moveSpeed);
-			}
-
+			////si baja a pos.Z 27 o menos, mover de costado
+			//if (transform.position.z <= 27) {
+			//	transform.Translate (Vector3.left * Time.deltaTime * moveSpeed);
+			//}
+            Vector3 myVector2 = new Vector3(0, 0, -1 * Time.deltaTime * moveSpeed);
+            transform.Translate(myVector2);
 			break;
-		
-		default: 
-			break;
-
 		}
 			
 	}

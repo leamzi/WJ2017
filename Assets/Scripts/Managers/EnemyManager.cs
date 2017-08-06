@@ -74,9 +74,7 @@ public class EnemyManager : SingletonMonoBehaviour<EnemyManager>  {
 
 	void SpawnEnemy(int myType, Vector3 myPos)	
 	{
-
 		Instantiate (enemyTypes[myType], myPos, enemyTypes[myType].rotation);
-
 	}
 
 }

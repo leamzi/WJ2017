@@ -503,7 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c777aa2e993e54643b87cf4af4f3c6fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 7
   enemyType: 0
   canFire: 0
   enemyModel: {fileID: 1997485748948310}

@@ -23,6 +23,10 @@ public class IntroManager : MonoBehaviour {
     private int introCount = 0;
     private Image elementImage;
 
+    private void Start()
+    {
+        OnFadeIn();
+    }
     public void OnFadeIn()
     {
         introCount++;
