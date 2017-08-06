@@ -307,7 +307,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2ea30647f749e5f4eaaf52f77d451039, type: 3}
   - {fileID: 8300000, guid: ffa7700faa2200249b6b6bd8f35cad23, type: 3}
   - {fileID: 8300000, guid: 0d60a288e4949eb40bcb41efcae5fa0d, type: 3}
-  - {fileID: 8300000, guid: af880fd8c62083644896d49c1f7ee9c3, type: 3}
   lowPitchRange: 0.95
   highPitchRange: 1.2
   muteSfx: 0
