@@ -15,7 +15,6 @@ public class UIGameplay : MonoBehaviour {
 	void Start () {
         PlayerManager.Instance.notifyPlayerScoreObservers += addScore;
         PlayerManager.Instance.notifyGameOver += OnGameOver;
-
     }
 
     private void addScore(int newScore)

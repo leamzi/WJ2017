@@ -26,6 +26,9 @@ public class PlayerManager : SingletonMonoBehaviour<PlayerManager> {
     public delegate void OnGameOver();
     public event OnGameOver notifyGameOver;
 
+    public delegate void OnPlayerRemoveLife();
+    public event OnGameOver notifyPlayerRemoveLives;
+
     private int playerScore;
 
     public List<MeshRenderer> shipTextures;
@@ -50,6 +53,12 @@ public class PlayerManager : SingletonMonoBehaviour<PlayerManager> {
     {
         if (notifyGameOver != null)
             notifyGameOver();
+    }
+
+    public void removePlayerLife()
+    {
+        if(notifyPlayerRemoveLives != null)
+            notifyPlayerRemoveLives();
     }
 
     public void onChangeTexture(Color _color)

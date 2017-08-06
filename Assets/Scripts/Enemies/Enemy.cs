@@ -11,9 +11,12 @@ public class Enemy : MonoBehaviour {
     public GameObject enemyModel;
     public GameObject explosionVFX;
 
+    public GameObject life01;
+    public GameObject life02;
+
     //int health = 5;
 
-	public Transform bulletEnemyObj;
+    public Transform bulletEnemyObj;
 
 	[SerializeField] private float fireRate;
 	private float nextFire;
@@ -98,6 +101,7 @@ public class Enemy : MonoBehaviour {
         {
             print("Me pego player");
             PlayerManager.healthManager.playerDamage();
+            PlayerManager.Instance.removePlayerLife();
         }
     }
 
