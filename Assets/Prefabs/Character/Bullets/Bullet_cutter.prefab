@@ -31,7 +31,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1719167096321208
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 198333745735624254}
   - component: {fileID: 199283876009052488}
   m_Layer: 0
-  m_Name: vfx_Trail (3)
+  m_Name: vfx_Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,7 +90,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0.364}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4654205091539170}
+  m_Father: {fileID: 4312166017599334}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4312166017599334
@@ -104,6 +104,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4654205091539170}
+  - {fileID: 4046000404975544}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -131,7 +132,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4312821246871994}
-  - {fileID: 4046000404975544}
   m_Father: {fileID: 4312166017599334}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -313,7 +313,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 550515126
+  randomSeed: -686122688
   InitialModule:
     serializedVersion: 3
     enabled: 1
