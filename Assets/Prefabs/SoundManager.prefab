@@ -299,7 +299,8 @@ MonoBehaviour:
   randomPitchSource: {fileID: 82901065508822368}
   bgmAudios:
   - {fileID: 8300000, guid: 5df63857b6840684aa7772a7d690e82a, type: 3}
-  sfxAudios: []
+  sfxAudios:
+  - {fileID: 8300000, guid: 3bfd5cd5395feaf44863a2b4316e157e, type: 3}
   lowPitchRange: 0.95
   highPitchRange: 1.2
   muteSfx: 0

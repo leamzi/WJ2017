@@ -12,20 +12,24 @@ public class GameGlobalVariables : SingletonMonoBehaviour<GameGlobalVariables> {
     #endregion
 
     #region SFXs
+    public static string SFX_PLAYER_BLAST_01 = "SFX_Player_Blast";
 
     #endregion
 
     #endregion
 
+    #region Player Vars
     public static PlayerBullet bulletType = new PlayerBullet();
     public class PlayerBullet
     {
-        public int bulletForkId = 100;
-        public int bulletKnifeId = 101;
-        public int bulletMixer = 102;
-        public int bulletCutter = 103;
+        public int bulletForkID = 100;
+        public int bulletKnifeID = 101;
+        public int bulletMixerID = 102;
+        public int bulletCutterID = 103;
     }
+    #endregion
 
+    #region Game Vars
     public PlayerBulletType currentBulletType = PlayerBulletType.BULLET_FORK;
     public enum PlayerBulletType
     {
@@ -41,5 +45,12 @@ public class GameGlobalVariables : SingletonMonoBehaviour<GameGlobalVariables> {
         POWERUP_SHIELD,
         POWERUP_SPECIAL_ATTACK
     }
+
+    public static GamePowerups gamePowerupType = new GamePowerups();
+    public class GamePowerups
+    {
+        public int powerupWeaponID = 200;
+    }
+    #endregion
 
 }

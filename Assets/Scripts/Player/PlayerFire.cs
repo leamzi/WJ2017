@@ -35,16 +35,16 @@ public class PlayerFire : MonoBehaviour {
         switch (GameGlobalVariables.Instance.currentBulletType)
         {
             case GameGlobalVariables.PlayerBulletType.BULLET_FORK:
-            bulletPool = FastPoolManager.GetPool(GameGlobalVariables.bulletType.bulletForkId, null, false);
+            bulletPool = FastPoolManager.GetPool(GameGlobalVariables.bulletType.bulletForkID, null, false);
                 break;
             case GameGlobalVariables.PlayerBulletType.BULLET_KNIFE:
-            bulletPool = FastPoolManager.GetPool(GameGlobalVariables.bulletType.bulletKnifeId, null, false);
+            bulletPool = FastPoolManager.GetPool(GameGlobalVariables.bulletType.bulletKnifeID, null, false);
                 break;
             case GameGlobalVariables.PlayerBulletType.BULLET_MIXER:
-            bulletPool = FastPoolManager.GetPool(GameGlobalVariables.bulletType.bulletMixer, null, false);
+            bulletPool = FastPoolManager.GetPool(GameGlobalVariables.bulletType.bulletMixerID, null, false);
                 break;
             case GameGlobalVariables.PlayerBulletType.BULLET_CUTTER:
-            bulletPool = FastPoolManager.GetPool(GameGlobalVariables.bulletType.bulletCutter, null, false);
+            bulletPool = FastPoolManager.GetPool(GameGlobalVariables.bulletType.bulletCutterID, null, false);
                 break;
         }
         //print("Setting Bullet pool: " + GameGlobalVariables.Instance.currentBulletType.ToString());
@@ -81,6 +81,8 @@ public class PlayerFire : MonoBehaviour {
             case GameGlobalVariables.PlayerBulletType.BULLET_CUTTER:
                 break;
         }
+        //print("play sfx");
+        SoundManager.instance.PlaySfx(GameGlobalVariables.SFX_PLAYER_BLAST_01);
     }
 
     public void OnPowerup()
