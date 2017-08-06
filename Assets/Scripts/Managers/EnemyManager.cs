@@ -14,10 +14,11 @@ public class EnemyManager : SingletonMonoBehaviour<EnemyManager>  {
 
 	public int enemiesPerWave;
 	public int numWaves;
-	public int currentWave=1;
+	int currentWave;
 	public float spawnWaveWait;
 	public float spawnWait;
 	public float startWait;
+	public bool bossSpawned;
 
 	//public List<enemyShip> enemyList = new List<enemyShip>();
 
@@ -46,18 +47,27 @@ public class EnemyManager : SingletonMonoBehaviour<EnemyManager>  {
 	{
 		yield return new WaitForSeconds (startWait);
 
-		for (currentWave=1; currentWave <= numWaves; currentWave++)
-		{
-			for (int i = 0; i < enemiesPerWave; i++)
-			{
-				// x -8 a 8
-				SpawnEnemy ( 0, new Vector3 ( Random.Range(-8,8),0,26) ); 
-				//enemyList.Add ();
+		if (!bossSpawned) {
+			
+			for (currentWave = 1; currentWave <= numWaves; currentWave++) {
+				for (int i = 0; i < enemiesPerWave; i++) {
+					int tipoEnemigo;				
+		
+					tipoEnemigo = currentWave-1;
 
-				yield return new WaitForSeconds (spawnWait);
+					if (currentWave == 3) {
+						bossSpawned = true;
+					}
+
+					// x -8 a 8
+					SpawnEnemy (tipoEnemigo, new Vector3 (Random.Range (-8, 8), 0, 26)); 
+					//enemyList.Add ();
+
+					yield return new WaitForSeconds (spawnWait);
+				}
+
+				yield return new WaitForSeconds (spawnWaveWait);
 			}
-
-			yield return new WaitForSeconds (spawnWaveWait);
 		}
 	}
 		
