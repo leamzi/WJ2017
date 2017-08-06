@@ -10,5 +10,10 @@ public class OnExitBondaries : MonoBehaviour {
         {
             other.GetComponent<Bullet>().dispose();
         }
+        
+        if (other.tag == "Powerup")
+        {
+            other.GetComponent<PowerupManager>().dispose();
+        }
     }
 }

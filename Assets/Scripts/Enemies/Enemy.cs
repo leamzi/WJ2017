@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour {
 
 	public float moveSpeed= 5.0f;
 	public int enemyType = 0;
-	int health=5;
+    //int health = 5;
 
 	public Transform bulletEnemyObj;
 
