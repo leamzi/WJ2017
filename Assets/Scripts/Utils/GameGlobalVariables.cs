@@ -26,6 +26,9 @@ public class GameGlobalVariables : SingletonMonoBehaviour<GameGlobalVariables> {
     public static string SFX_ENEMY_BLAST_01 = "SFX_Enemy_Blast";
     public static string SFX_ENEMY_DEATH = "SFX_Enemy_Explosion";
     public static string SFX_GAMEPLAY_POWERUP = "SFX_Gameplay_Powerup";
+    public static string SFX_INTRO_GLUP= "SFX_INTRO_GLUP";
+    public static string SFX_INTRO_NOTA = "SFX_Intro_Nota"; 
+
     #endregion
 
     #endregion

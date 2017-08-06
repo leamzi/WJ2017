@@ -42,6 +42,7 @@ public class IntroManager : MonoBehaviour {
         {
             elementImage = imagePanelIntro02;
             buttonIntro02.SetActive(false);
+            SoundManager.instance.PlaySfx(GameGlobalVariables.SFX_INTRO_GLUP);
             StartCoroutine(fadeOutAnimation());
             buttonIntro03.SetActive(true);
         }
@@ -49,6 +50,7 @@ public class IntroManager : MonoBehaviour {
         {
             elementImage = imagePanelIntro03;
             buttonIntro03.SetActive(false);
+            SoundManager.instance.PlaySfx(GameGlobalVariables.SFX_INTRO_NOTA);
             StartCoroutine(fadeOutAnimation());
             buttonIntro04.SetActive(true);
         }
