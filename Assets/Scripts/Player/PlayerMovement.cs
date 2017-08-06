@@ -52,7 +52,10 @@ public class PlayerMovement : MonoBehaviour {
     private void Move()
     {
         if (!canMove)
+        {
+            playerRigidBody.velocity = Vector3.zero;
             return;
+        }
         Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
 
         playerRigidBody.velocity = movement * playerSpeed;

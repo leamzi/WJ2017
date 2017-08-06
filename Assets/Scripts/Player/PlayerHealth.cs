@@ -9,6 +9,8 @@ public class PlayerHealth : MonoBehaviour {
     public GameObject playerShip;
     public GameObject playerDeathAnim;
 
+    public bool invulnerable = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -21,7 +23,7 @@ public class PlayerHealth : MonoBehaviour {
 
     void checkForGameover()
     {
-        if (live <= 0)
+        if (live < 0)
         {
             PlayerManager.Instance.gameOver();
         }
@@ -29,6 +31,8 @@ public class PlayerHealth : MonoBehaviour {
 
     public void playerDamage()
     {
+        invulnerable = true;
+        SoundManager.instance.PlaySfx(GameGlobalVariables.SFX_PLAYER_DEATH);
         PlayerManager.controllerMovement.canMove = false;
         playerShip.SetActive(false);
         playerDeathAnim.SetActive(true);
@@ -49,6 +53,8 @@ public class PlayerHealth : MonoBehaviour {
         PlayerManager.Instance.gameObject.transform.position = PlayerManager.Instance.playerInitialPos.position;
         playerShip.SetActive(true);
         PlayerManager.controllerMovement.canMove = true;
+        yield return new WaitForSeconds(0.5f);
+        invulnerable = false;
     }
 
     //private void OnTriggerEnter(Collider other)

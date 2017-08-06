@@ -18,6 +18,7 @@ public class GameController : SingletonMonoBehaviour<GameController>
 
 	// Use this for initialization
 	protected override void Start () {
+        Time.timeScale = 1;
         base.Start();
 
         powerupWeaponPool = FastPoolManager.GetPool(GameGlobalVariables.gamePowerupType.powerupWeaponID, null, false);

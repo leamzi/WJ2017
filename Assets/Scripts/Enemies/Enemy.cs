@@ -91,7 +91,7 @@ public class Enemy : MonoBehaviour {
         if (other.tag == "Bullet")
         {
             print("Me pego bala");
-            //PlayerManager.Instance.playerAddScore(10);
+            PlayerManager.Instance.playerAddScore(10);
             enemyModel.SetActive(false);
             StartCoroutine(destroyAnim());
             other.GetComponent<Bullet>().dispose();
@@ -99,7 +99,10 @@ public class Enemy : MonoBehaviour {
 
         if (other.tag == "Player")
         {
-            print("Me pego player");
+            if (PlayerManager.healthManager.invulnerable)
+                return;
+
+            print("le pego a player");
             PlayerManager.healthManager.playerDamage();
             PlayerManager.Instance.removePlayerLife();
         }
@@ -108,6 +111,7 @@ public class Enemy : MonoBehaviour {
     IEnumerator destroyAnim()
     {
         explosionVFX.SetActive(true);
+        SoundManager.instance.PlaySfx(GameGlobalVariables.SFX_ENEMY_DEATH);
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }

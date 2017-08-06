@@ -211,6 +211,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &200567359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 200567360}
+  m_Layer: 0
+  m_Name: respawnMP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &200567360
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 200567359}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 783936280}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &226095067
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,6 +488,7 @@ Transform:
   - {fileID: 1712241882}
   - {fileID: 1227167009}
   - {fileID: 541066544}
+  - {fileID: 200567360}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1231,7 +1260,7 @@ Prefab:
     - target: {fileID: 224768135453779382, guid: 8e9420c3dd26b544f90221f9784b7a97,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.3266678
+      value: 11.717501
       objectReference: {fileID: 0}
     - target: {fileID: 224768135453779382, guid: 8e9420c3dd26b544f90221f9784b7a97,
         type: 2}
@@ -1251,7 +1280,7 @@ Prefab:
     - target: {fileID: 224046659123239668, guid: 8e9420c3dd26b544f90221f9784b7a97,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 45.890003
+      value: 80.0625
       objectReference: {fileID: 0}
     - target: {fileID: 224046659123239668, guid: 8e9420c3dd26b544f90221f9784b7a97,
         type: 2}
@@ -1358,11 +1387,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 783936280}
     m_Modifications:
-    - target: {fileID: 114208305406708364, guid: 80505e942523a7248a46b5eb81f2c0de,
-        type: 2}
-      propertyPath: shipMaterial.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4299857461389086, guid: 80505e942523a7248a46b5eb81f2c0de, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1395,26 +1419,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114208305406708364, guid: 80505e942523a7248a46b5eb81f2c0de,
+    - target: {fileID: 114173019813387140, guid: 80505e942523a7248a46b5eb81f2c0de,
         type: 2}
-      propertyPath: shipMaterial.Array.data[0]
+      propertyPath: respawnMP
       value: 
-      objectReference: {fileID: 2100000, guid: 6a1829c8065c57e48abba396f126ff57, type: 2}
-    - target: {fileID: 114208305406708364, guid: 80505e942523a7248a46b5eb81f2c0de,
-        type: 2}
-      propertyPath: shipMaterial.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 793af7623d6278c4c9cd2fdb561d864f, type: 2}
-    - target: {fileID: 114208305406708364, guid: 80505e942523a7248a46b5eb81f2c0de,
-        type: 2}
-      propertyPath: shipMaterial.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: 923723e79db77bc4e912586e36ecf4ff, type: 2}
-    - target: {fileID: 114208305406708364, guid: 80505e942523a7248a46b5eb81f2c0de,
-        type: 2}
-      propertyPath: shipMaterial.Array.data[3]
-      value: 
-      objectReference: {fileID: 2100000, guid: 923723e79db77bc4e912586e36ecf4ff, type: 2}
+      objectReference: {fileID: 200567360}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80505e942523a7248a46b5eb81f2c0de, type: 2}
   m_IsPrefabParent: 0
