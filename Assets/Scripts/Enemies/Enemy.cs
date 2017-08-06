@@ -16,7 +16,8 @@ public class Enemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+
+		fireRate = Random.Range (1.0f, 1.5f);
 	}
 	
 	// Update is called once per frame
@@ -37,7 +38,7 @@ public class Enemy : MonoBehaviour {
 		switch (enemyType) {
 
 		//derecho
-		case 0:	transform.Translate (Vector3.forward * Time.deltaTime * moveSpeed);
+		case 0:	transform.Translate (Vector3.down * Time.deltaTime * moveSpeed);
 
 			break;
 
@@ -68,7 +69,8 @@ public class Enemy : MonoBehaviour {
 
 	void FireBullet(Vector3 myPos)
 	{
-		Instantiate (bulletEnemyObj, myPos , bulletEnemyObj.rotation);
+		myPos.z -= 3;
+		Instantiate (bulletEnemyObj, myPos, bulletEnemyObj.rotation);
 	}
 
 }
