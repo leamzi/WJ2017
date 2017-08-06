@@ -450,8 +450,8 @@ MonoBehaviour:
   powerupSpawnPoint: {fileID: 541066543}
   powerupWeapon: {fileID: 1519433245743508, guid: 18d3976bf23a1d646a07e825814a852a,
     type: 2}
-  puStartWait: 15
-  puSpawnWait: 35
+  puStartWait: 5
+  puSpawnWait: 10
 --- !u!1 &450724912
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,7 +1441,7 @@ Prefab:
     - target: {fileID: 224768135453779382, guid: 8e9420c3dd26b544f90221f9784b7a97,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -53.055
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224046659123239668, guid: 8e9420c3dd26b544f90221f9784b7a97,
         type: 2}
@@ -1461,7 +1461,7 @@ Prefab:
     - target: {fileID: 224046659123239668, guid: 8e9420c3dd26b544f90221f9784b7a97,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -53.055
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224119634998857000, guid: 8e9420c3dd26b544f90221f9784b7a97,
         type: 2}
