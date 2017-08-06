@@ -35,4 +35,11 @@ public class GameGlobalVariables : SingletonMonoBehaviour<GameGlobalVariables> {
         BULLET_CUTTER
     }
 
+    public enum PowerupType
+    {
+        POWERUP_WEAPON,
+        POWERUP_SHIELD,
+        POWERUP_SPECIAL_ATTACK
+    }
+
 }

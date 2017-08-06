@@ -1,15 +1,24 @@
 fileFormatVersion: 2
-guid: 2cd972bc0fdd0434f9e316f8755b8aa3
-timeCreated: 1501952127
+guid: 5679e18e31e67a148b34b2cd5d33a42f
+timeCreated: 1501987974
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
+    100000: Box002
+    100002: //RootNode
+    100004: Cylinder001
+    400000: Box002
+    400002: //RootNode
+    400004: Cylinder001
+    2300000: Box002
+    2300002: Cylinder001
+    2300004: //RootNode
+    3300000: Box002
+    3300002: Cylinder001
+    3300004: //RootNode
     4300000: Cylinder001
+    4300002: Box002
   materials:
     importMaterials: 1
     materialName: 0
@@ -57,7 +66,7 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1
