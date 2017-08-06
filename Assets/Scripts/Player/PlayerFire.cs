@@ -7,9 +7,12 @@ using UnityEngine;
 /// </summary>
 public class PlayerFire : MonoBehaviour {
 
-    [SerializeField] private float fireRate;
-
     [HideInInspector] public FastPool bulletPool;
+
+    public int playerFrLvl; //Player fire rate level
+    public int playerWpLvl; //Player weapon level
+
+    [SerializeField] private float fireRate;
     private List<GameObject> bullets;
     private float nextFire;
 
@@ -44,8 +47,7 @@ public class PlayerFire : MonoBehaviour {
             bulletPool = FastPoolManager.GetPool(GameGlobalVariables.bulletType.bulletCutter, null, false);
                 break;
         }
-
-        print("Setting Bullet pool: " + GameGlobalVariables.Instance.currentBulletType.ToString());
+        //print("Setting Bullet pool: " + GameGlobalVariables.Instance.currentBulletType.ToString());
     }
 
     private void checkForFire()
@@ -64,8 +66,7 @@ public class PlayerFire : MonoBehaviour {
 
     private void fireBulletType()
     {
-        print("Firing Bullet: " + GameGlobalVariables.Instance.currentBulletType.ToString());
-
+        //print("Firing Bullet: " + GameGlobalVariables.Instance.currentBulletType.ToString());
         switch (GameGlobalVariables.Instance.currentBulletType)
         {
             case GameGlobalVariables.PlayerBulletType.BULLET_FORK:
@@ -79,6 +80,24 @@ public class PlayerFire : MonoBehaviour {
                 break;
             case GameGlobalVariables.PlayerBulletType.BULLET_CUTTER:
                 break;
+        }
+    }
+
+    public void OnPowerup()
+    {
+        playerFrLvl++;
+        print("Player gun level: " + playerFrLvl);
+
+        if (playerFrLvl > 2)
+        {
+            print("Changing arm");
+            changeBulletTypes(GameGlobalVariables.PlayerBulletType.BULLET_KNIFE);
+            fireRate = 0.75f;
+        }
+        else
+        {
+            print("Upgrading fire rate");
+            fireRate = fireRate - 0.20f;
         }
     }
 
