@@ -11,6 +11,12 @@ public class PlayerFire : MonoBehaviour {
 
     public int playerFrLvl; //Player fire rate level
     public int playerWpLvl; //Player weapon level
+    public GameObject muzzle_fork;
+    public GameObject muzzle_knife01;
+    public GameObject muzzle_knife02;
+    public GameObject muzzle_cutter01;
+    public GameObject muzzle_cutter02;
+    public GameObject muzzle_cutter03;
 
     [SerializeField] private float fireRate;
     private List<GameObject> bullets;
@@ -29,7 +35,7 @@ public class PlayerFire : MonoBehaviour {
     #region PlayerFire
     private void setBulletPool()
     {
-        if(bullets == null)
+        if (bullets == null)
             bullets = new List<GameObject>();
 
         switch (GameGlobalVariables.Instance.currentBulletType)
@@ -67,18 +73,35 @@ public class PlayerFire : MonoBehaviour {
     private void fireBulletType()
     {
         //print("Firing Bullet: " + GameGlobalVariables.Instance.currentBulletType.ToString());
+        muzzle_fork.SetActive(false);
+        muzzle_knife01.SetActive(false);
+        muzzle_knife02.SetActive(false);
+
+        muzzle_cutter01.SetActive(false);
+        muzzle_cutter02.SetActive(false);
+        muzzle_cutter03.SetActive(false);
+
         switch (GameGlobalVariables.Instance.currentBulletType)
         {
             case GameGlobalVariables.PlayerBulletType.BULLET_FORK:
+                muzzle_fork.SetActive(true);
                 bullets.Add(bulletPool.FastInstantiate(PlayerManager.Instance.bulletForkMP));
                 break;
             case GameGlobalVariables.PlayerBulletType.BULLET_KNIFE:
+                muzzle_knife01.SetActive(true);
+                muzzle_knife02.SetActive(true);
                 bullets.Add(bulletPool.FastInstantiate(PlayerManager.Instance.bulletKnifeMP01));
                 bullets.Add(bulletPool.FastInstantiate(PlayerManager.Instance.bulletKnifeMP02));
                 break;
-            case GameGlobalVariables.PlayerBulletType.BULLET_MIXER:
-                break;
             case GameGlobalVariables.PlayerBulletType.BULLET_CUTTER:
+                muzzle_cutter01.SetActive(true);
+                muzzle_cutter02.SetActive(true);
+                muzzle_cutter03.SetActive(true);
+                bullets.Add(bulletPool.FastInstantiate(PlayerManager.Instance.bulletCutterMP01));
+                bullets.Add(bulletPool.FastInstantiate(PlayerManager.Instance.bulletCutterMP02));
+                bullets.Add(bulletPool.FastInstantiate(PlayerManager.Instance.bulletCutterMP03));
+                break;
+            case GameGlobalVariables.PlayerBulletType.BULLET_MIXER:
                 break;
         }
         //print("play sfx");
@@ -87,6 +110,9 @@ public class PlayerFire : MonoBehaviour {
 
     public void OnPowerup()
     {
+        if (GameGlobalVariables.Instance.currentBulletType == GameGlobalVariables.PlayerBulletType.BULLET_CUTTER)
+            return;
+
         playerFrLvl++;
         print("Player gun level: " + playerFrLvl);
 
@@ -95,6 +121,7 @@ public class PlayerFire : MonoBehaviour {
             print("Changing arm");
             changeBulletTypes(GameGlobalVariables.PlayerBulletType.BULLET_KNIFE);
             fireRate = 0.75f;
+            playerFrLvl = 0;
         }
         else
         {
@@ -105,7 +132,20 @@ public class PlayerFire : MonoBehaviour {
 
     private void changeBulletTypes(GameGlobalVariables.PlayerBulletType _bulletType)
     {
-        GameGlobalVariables.Instance.currentBulletType = _bulletType;
+        switch (GameGlobalVariables.Instance.currentBulletType)
+        {
+            case GameGlobalVariables.PlayerBulletType.BULLET_FORK:
+            GameGlobalVariables.Instance.currentBulletType = GameGlobalVariables.PlayerBulletType.BULLET_KNIFE;
+            fireRate = 0.75f;
+                break;
+            case GameGlobalVariables.PlayerBulletType.BULLET_KNIFE:
+            GameGlobalVariables.Instance.currentBulletType = GameGlobalVariables.PlayerBulletType.BULLET_CUTTER;
+            fireRate = 0.4f;
+                break;
+            case GameGlobalVariables.PlayerBulletType.BULLET_CUTTER:
+                break;
+        }
+
         setBulletPool();
     }
     #endregion

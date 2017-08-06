@@ -134,7 +134,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.501
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -178,7 +178,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -202,7 +202,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!82 &82901065508822368
 AudioSource:
   m_ObjectHideFlags: 1
@@ -258,7 +258,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -282,7 +282,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!114 &114286041896848032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -301,6 +301,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5df63857b6840684aa7772a7d690e82a, type: 3}
   sfxAudios:
   - {fileID: 8300000, guid: 3bfd5cd5395feaf44863a2b4316e157e, type: 3}
+  - {fileID: 8300000, guid: 6e8b1d40bdf6e6d468f70dda52e3b535, type: 3}
+  - {fileID: 8300000, guid: e2d7f7c473e7fde428badf5eb7e4831c, type: 3}
+  - {fileID: 8300000, guid: 6dc7d75b5cb42084cb070506e3cd0c87, type: 3}
   lowPitchRange: 0.95
   highPitchRange: 1.2
   muteSfx: 0

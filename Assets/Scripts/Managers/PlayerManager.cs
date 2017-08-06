@@ -10,6 +10,9 @@ public class PlayerManager : SingletonMonoBehaviour<PlayerManager> {
     public Transform bulletForkMP;
     public Transform bulletKnifeMP01;
     public Transform bulletKnifeMP02;
+    public Transform bulletCutterMP01;
+    public Transform bulletCutterMP02;
+    public Transform bulletCutterMP03;
 
     protected override void Start() {
         base.Start();
@@ -22,5 +25,10 @@ public class PlayerManager : SingletonMonoBehaviour<PlayerManager> {
 	void Update () {
 		
 	}
+
+    public void onChangeTexture()
+    {
+
+    }
     
 }

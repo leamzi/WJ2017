@@ -24,6 +24,7 @@ public class Bullet : MonoBehaviour {
 
     public void dispose()
     {
+        this.transform.rotation = Quaternion.identity;
         PlayerManager.controllerFire.bulletPool.FastDestroy(this);
     }
 
