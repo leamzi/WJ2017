@@ -8,29 +8,36 @@ using UnityEngine;
 /// </summary>
 public class PowerupManager : MonoBehaviour {
 
-    private GameGlobalVariables.PowerupType type;
+    public GameGlobalVariables.PowerupType powerupType;
+    public FastPool powerupPool;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    private void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            PlayerManager.controllerFire.OnPowerup();
-            dispose();
+            activatePowerup();
         }
     }
 
-    private void dispose()
+    public void dispose()
     {
-        this.gameObject.SetActive(false);
+        powerupPool.FastDestroy(this);
+    }
+
+    private void activatePowerup()
+    {
+        SoundManager.instance.PlaySfx(GameGlobalVariables.SFX_GAMEPLAY_POWERUP);
+        switch (powerupType)
+        {
+            case GameGlobalVariables.PowerupType.POWERUP_WEAPON:
+                PlayerManager.controllerFire.OnPowerup();
+                break;
+            case GameGlobalVariables.PowerupType.POWERUP_SHIELD:
+                break;
+            case GameGlobalVariables.PowerupType.POWERUP_SPECIAL_ATTACK:
+                break;
+            default:
+                break;
+        }
     }
 }

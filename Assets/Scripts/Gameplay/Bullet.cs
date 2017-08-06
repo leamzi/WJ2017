@@ -9,6 +9,8 @@ public class Bullet : MonoBehaviour {
     [SerializeField] private float speed = 0f;
 
     private Rigidbody objectRigidBody;
+
+    public int damage = 1;
     
     private void Start()
     {
@@ -24,6 +26,7 @@ public class Bullet : MonoBehaviour {
 
     public void dispose()
     {
+        this.transform.rotation = Quaternion.identity;
         PlayerManager.controllerFire.bulletPool.FastDestroy(this);
     }
 
