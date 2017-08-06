@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour {
     private float       moveHorizontal = 0f;
     private float       moveVertical = 0f;
     private Rigidbody   playerRigidBody;
-    
+    public bool canMove = true;
     [Header("Game Settings")]
     public Boundary         boundary;
     
@@ -51,6 +51,8 @@ public class PlayerMovement : MonoBehaviour {
     /// </summary>
     private void Move()
     {
+        if (!canMove)
+            return;
         Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
 
         playerRigidBody.velocity = movement * playerSpeed;

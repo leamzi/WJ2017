@@ -8,6 +8,9 @@ public class Enemy : MonoBehaviour {
 	public int enemyType = 0;
 	public bool canFire;
 
+    public GameObject enemyModel;
+    public GameObject explosionVFX;
+
     //int health = 5;
 
 	public Transform bulletEnemyObj;
@@ -15,12 +18,6 @@ public class Enemy : MonoBehaviour {
 	[SerializeField] private float fireRate;
 	private float nextFire;
 
-
-	// Use this for initialization
-	void Start () {
-
-	}
-	
 	// Update is called once per frame
 	void Update () {
 
@@ -81,16 +78,34 @@ public class Enemy : MonoBehaviour {
 	void FireBullet(Vector3 myPos)
 	{
 		myPos.z -= 3;
-
-
-
 		//Instantiate (bulletEnemyObj, myPos, bulletEnemyObj.rotation);
-
 		//GameObject bullet = Instantiate(bulletTrailPrefab, bulletSpawn.position, bulletSpawn.rotation) as GameObject;
-
 		//Instantiate (, this.transform.position, this.transform.rotation);
-
-
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Bullet")
+        {
+            print("Me pego bala");
+            //PlayerManager.Instance.playerAddScore(10);
+            enemyModel.SetActive(false);
+            StartCoroutine(destroyAnim());
+            other.GetComponent<Bullet>().dispose();
+        }
+
+        if (other.tag == "Player")
+        {
+            print("Me pego player");
+            PlayerManager.healthManager.playerDamage();
+        }
+    }
+
+    IEnumerator destroyAnim()
+    {
+        explosionVFX.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
+    }
 
 }

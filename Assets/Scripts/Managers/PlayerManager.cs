@@ -18,9 +18,13 @@ public class PlayerManager : SingletonMonoBehaviour<PlayerManager> {
     public Transform bulletCutterMP01;
     public Transform bulletCutterMP02;
     public Transform bulletCutterMP03;
+    public Transform playerInitialPos;
 
     public delegate void OnPlayerScore(int newScore);
     public event OnPlayerScore notifyPlayerScoreObservers;
+
+    public delegate void OnGameOver();
+    public event OnGameOver notifyGameOver;
 
     private int playerScore;
 
@@ -28,16 +32,25 @@ public class PlayerManager : SingletonMonoBehaviour<PlayerManager> {
     public List<Texture> shipMaterial;
 
     protected override void Start() {
+        playerInitialPos = this.transform;
         base.Start();
 
         controllerMovement = GetComponent<PlayerMovement>();
         controllerFire = GetComponent<PlayerFire>();
+        healthManager = GetComponent<PlayerHealth>();
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
+
+    public void gameOver()
+    {
+        if (notifyGameOver != null)
+            notifyGameOver();
+    }
 
     public void onChangeTexture(Color _color)
     {
@@ -51,6 +64,7 @@ public class PlayerManager : SingletonMonoBehaviour<PlayerManager> {
     public void playerAddScore(int score)
     {
         playerScore += score;
-        notifyPlayerScoreObservers(playerScore);
+        if(notifyPlayerScoreObservers != null)
+            notifyPlayerScoreObservers(playerScore);
     }
 }

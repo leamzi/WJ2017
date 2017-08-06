@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Autor: Leamzi
@@ -13,8 +14,10 @@ public class UIGameplay : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         PlayerManager.Instance.notifyPlayerScoreObservers += addScore;
-	}
-	
+        PlayerManager.Instance.notifyGameOver += OnGameOver;
+
+    }
+
     private void addScore(int newScore)
     {
         textScore.text = "" + newScore;
@@ -24,5 +27,17 @@ public class UIGameplay : MonoBehaviour {
     {
         GameoverPanel.SetActive(true);
         Time.timeScale = 0f;
+    }
+
+    public void OnRetry()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Scene_Gameplay");
+    }
+
+    public void OnLeave()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Scene_Main");
     }
 }
