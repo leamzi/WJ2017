@@ -44,8 +44,7 @@ public class PlayerFire : MonoBehaviour {
             bulletPool = FastPoolManager.GetPool(GameGlobalVariables.bulletType.bulletCutter, null, false);
                 break;
         }
-
-        print("Setting Bullet pool: " + GameGlobalVariables.Instance.currentBulletType.ToString());
+        //print("Setting Bullet pool: " + GameGlobalVariables.Instance.currentBulletType.ToString());
     }
 
     private void checkForFire()
@@ -64,8 +63,7 @@ public class PlayerFire : MonoBehaviour {
 
     private void fireBulletType()
     {
-        print("Firing Bullet: " + GameGlobalVariables.Instance.currentBulletType.ToString());
-
+        //print("Firing Bullet: " + GameGlobalVariables.Instance.currentBulletType.ToString());
         switch (GameGlobalVariables.Instance.currentBulletType)
         {
             case GameGlobalVariables.PlayerBulletType.BULLET_FORK:

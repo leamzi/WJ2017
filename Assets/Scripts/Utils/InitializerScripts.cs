@@ -8,9 +8,7 @@ public class InitializerScripts : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
         print("Initializing Singleton Scripts");
-
         GameGlobalVariables.Instantiate();
 	}
 	
