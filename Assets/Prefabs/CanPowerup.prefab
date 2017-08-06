@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 54739550212992400}
   - component: {fileID: 136589407992479138}
   - component: {fileID: 114792190556630890}
+  - component: {fileID: 114154015643936220}
   m_Layer: 0
   m_Name: CanPowerup
   m_TagString: Untagged
@@ -67,7 +68,7 @@ Transform:
   m_GameObject: {fileID: 1519433245743508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4166674280173694}
   m_Father: {fileID: 0}
@@ -127,6 +128,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114154015643936220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1519433245743508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4518cc205ab07f4479210bbc138a0960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114792190556630890
 MonoBehaviour:
   m_ObjectHideFlags: 1
