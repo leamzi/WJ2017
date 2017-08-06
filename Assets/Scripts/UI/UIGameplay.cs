@@ -15,6 +15,7 @@ public class UIGameplay : MonoBehaviour {
 	void Start () {
         PlayerManager.Instance.notifyPlayerScoreObservers += addScore;
         PlayerManager.Instance.notifyGameOver += OnGameOver;
+        PlayerManager.Instance.notifyPlayerRemoveLives += removeLive;
     }
 
     private void addScore(int newScore)
@@ -26,6 +27,11 @@ public class UIGameplay : MonoBehaviour {
     {
         GameoverPanel.SetActive(true);
         Time.timeScale = 0f;
+    }
+
+    public void removeLive()
+    {
+
     }
 
     public void OnRetry()
