@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour {
 
 	public float moveSpeed= 5.0f;
 	public int enemyType = 0;
+	public bool canFire;
+
     //int health = 5;
 
 	public Transform bulletEnemyObj;
@@ -17,13 +19,15 @@ public class Enemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		fireRate = Random.Range (1.0f, 1.5f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		checkForFire ();
+		if (canFire) {
+			checkForFire ();
+		}
+
 		Move ();
 	}
 		
@@ -39,18 +43,25 @@ public class Enemy : MonoBehaviour {
 
 		//derecho
 		case 0:	transform.Translate (Vector3.down * Time.deltaTime * moveSpeed);
+				break;
 
-			break;
-
-		case 1: 
-			
-			break;
+		case 1: transform.Translate (Vector3.down * Time.deltaTime * moveSpeed);
+				break;
+		
+		//si aun no bajo, seguir bajando al boss,
 		case 2:
-			
+			if (transform.position.z > 27) {
+				transform.Translate (Vector3.down * Time.deltaTime * moveSpeed);
+			}
+	
+
+			//si baja a pos.Z 27 o menos, mover de costado
+			if (transform.position.z <= 27) {
+				transform.Translate (Vector3.left * Time.deltaTime * moveSpeed);
+			}
+
 			break;
-		case 3:
-			
-			break;
+		
 		default: 
 			break;
 
@@ -70,7 +81,16 @@ public class Enemy : MonoBehaviour {
 	void FireBullet(Vector3 myPos)
 	{
 		myPos.z -= 3;
-		Instantiate (bulletEnemyObj, myPos, bulletEnemyObj.rotation);
+
+
+
+		//Instantiate (bulletEnemyObj, myPos, bulletEnemyObj.rotation);
+
+		//GameObject bullet = Instantiate(bulletTrailPrefab, bulletSpawn.position, bulletSpawn.rotation) as GameObject;
+
+		//Instantiate (, this.transform.position, this.transform.rotation);
+
+
 	}
 
 }

@@ -20,8 +20,12 @@ public class BulletEnemy : MonoBehaviour {
 			Destroy (gameObject);
 		}
 
-		transform.Translate (Vector3.back * Time.deltaTime * speed);
+		Move ();
+
 	}
 
+	public void Move(){
+		transform.Translate (Vector3.back * Time.deltaTime * speed);
+	}
 
 }
