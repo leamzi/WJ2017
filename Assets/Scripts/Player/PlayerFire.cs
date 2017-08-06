@@ -20,23 +20,40 @@ public class PlayerFire : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        fireBullet();
+        checkForFire();
     }
 
     #region PlayerFire
     private void setBulletPool()
     {
-        bullets = new List<GameObject>();
-        bulletPool = FastPoolManager.GetPool(1, null, false);
+        if(bullets == null)
+            bullets = new List<GameObject>();
+
+        switch (GameGlobalVariables.Instance.currentBulletType)
+        {
+            case GameGlobalVariables.PlayerBulletType.BULLET_FORK:
+            bulletPool = FastPoolManager.GetPool(GameGlobalVariables.bulletType.bulletForkId, null, false);
+                break;
+            case GameGlobalVariables.PlayerBulletType.BULLET_KNIFE:
+            bulletPool = FastPoolManager.GetPool(GameGlobalVariables.bulletType.bulletKnifeId, null, false);
+                break;
+            case GameGlobalVariables.PlayerBulletType.BULLET_MIXER:
+            bulletPool = FastPoolManager.GetPool(GameGlobalVariables.bulletType.bulletMixer, null, false);
+                break;
+            case GameGlobalVariables.PlayerBulletType.BULLET_CUTTER:
+            bulletPool = FastPoolManager.GetPool(GameGlobalVariables.bulletType.bulletCutter, null, false);
+                break;
+        }
+
+        print("Setting Bullet pool: " + GameGlobalVariables.Instance.currentBulletType.ToString());
     }
 
-    private void fireBullet()
+    private void checkForFire()
     {
         if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
-            //print("Bullet Pos: " + PlayerManager.Instance.fireMp);
-            bullets.Add(bulletPool.FastInstantiate(PlayerManager.Instance.fireMp));
+            fireBulletType();
         }
     }
 
@@ -45,5 +62,30 @@ public class PlayerFire : MonoBehaviour {
         PlayerManager.controllerFire.bulletPool.FastDestroy(bullets[0]);
     }
 
+    private void fireBulletType()
+    {
+        print("Firing Bullet: " + GameGlobalVariables.Instance.currentBulletType.ToString());
+
+        switch (GameGlobalVariables.Instance.currentBulletType)
+        {
+            case GameGlobalVariables.PlayerBulletType.BULLET_FORK:
+                bullets.Add(bulletPool.FastInstantiate(PlayerManager.Instance.bulletForkMP));
+                break;
+            case GameGlobalVariables.PlayerBulletType.BULLET_KNIFE:
+                bullets.Add(bulletPool.FastInstantiate(PlayerManager.Instance.bulletKnifeMP01));
+                bullets.Add(bulletPool.FastInstantiate(PlayerManager.Instance.bulletKnifeMP02));
+                break;
+            case GameGlobalVariables.PlayerBulletType.BULLET_MIXER:
+                break;
+            case GameGlobalVariables.PlayerBulletType.BULLET_CUTTER:
+                break;
+        }
+    }
+
+    private void changeBulletTypes(GameGlobalVariables.PlayerBulletType _bulletType)
+    {
+        GameGlobalVariables.Instance.currentBulletType = _bulletType;
+        setBulletPool();
+    }
     #endregion
 }

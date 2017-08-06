@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using System.Collections;
 /// <summary>
 /// Autor: Leamzi
 /// Script that moves object
@@ -19,10 +19,18 @@ public class Bullet : MonoBehaviour {
     private void moveForward()
     {
         objectRigidBody.velocity = transform.forward * speed;
+        StartCoroutine(disposeInSeconds());
     }
 
     public void dispose()
     {
         PlayerManager.controllerFire.bulletPool.FastDestroy(this);
+    }
+
+    IEnumerator disposeInSeconds()
+    {
+        yield return new WaitForSeconds(5);
+        print("Disposing");
+        dispose();
     }
 }

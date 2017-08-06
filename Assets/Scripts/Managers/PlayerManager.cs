@@ -7,7 +7,9 @@ public class PlayerManager : SingletonMonoBehaviour<PlayerManager> {
     public static PlayerMovement controllerMovement;
     public static PlayerFire controllerFire;
 
-    public Transform fireMp;
+    public Transform bulletForkMP;
+    public Transform bulletKnifeMP01;
+    public Transform bulletKnifeMP02;
 
     protected override void Start() {
         base.Start();
